@@ -7,65 +7,95 @@
 	xmlns:core="sap.ui.core"
 	xmlns:mdc="sap.ui.mdc"
 	xmlns:mdct="sap.ui.mdc.table"
-	xmlns:vm="sap.ui.fl.variants">
+	xmlns:vm="sap.ui.fl.variants"
+	controllerName="com.myorg.myapp.controller.Main">
 
 	<f:DynamicPage id="page">
 		<f:title>
 			<f:DynamicPageTitle>
 				<f:heading>
-					<Title text="Mountains"/>
+					<Title text="Football Clubs"/>
 				</f:heading>
 			</f:DynamicPageTitle>
 		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				
+				<mdc:FilterBar id="filterbar" delegate="{
+					name: 'com/myorg/myapp/delegate/JSONFilterBarDelegate'}"
+                    p13nMode = "Item,Value">
+					<mdc:basicSearchField>
+						<mdc:FilterField delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"
+							dataType="sap.ui.model.type.String"
+							placeholder= "Search Clubs"
+							conditions="{$filters>/conditions/$search}"
+							maxConditions="1"/>
+					</mdc:basicSearchField>
+					<mdc:filterItems>
+						<mdc:FilterField
+							label="Team Name"
+							propertyKey="team_name"
+							dataType="sap.ui.model.type.String"
+							conditions="{$filters>/conditions/name}"
+							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
+					</mdc:filterItems>
+					<mdc:dependents>
+						
+					</mdc:dependents>
+				</mdc:FilterBar>
 			</f:DynamicPageHeader>
 		</f:header>
 				<f:content>
 			<mdc:Table
 				id="table"
-				header="Mountains"
+				header="Football Clubs"
 				p13nMode="Sort,Column"
-				type="ResponsiveTable"
+				type="Table"
 				threshold="100"
 				filter="filterbar"
 				showRowCount="false"
 				delegate="{
 				name: 'com/myorg/myapp/delegate/JSONTableDelegate',
 				payload: {
-					bindingPath: 'mountains>/mountains'
+					bindingPath: 'clubs>/clubs',
+					searchKeys: ['team_name', 'matches_played', 'matches_won', 'points']
 				}
 			}">
+				<mdc:rowSettings>
+					<mdc:table.RowSettings>
+						<mdc:rowActions>
+							<mdc:table.RowActionItem type="Navigation" press="onRowPress"/>
+						</mdc:rowActions>
+					</mdc:table.RowSettings>
+				</mdc:rowSettings>
 				<mdct:Column
-					propertyKey="name"
-					header="Name">
-					<Text text="{mountains>name}" />
+					propertyKey="team_name"
+					header="Team Name">
+					<Text text="{clubs>team_name}" />
 				</mdct:Column>
 				<mdct:Column
-					propertyKey="height"
-					header="Height">
-					<Text text="{path: 'mountains>height'}" />
+					propertyKey="matches_played"
+					header="Matches Played">
+					<Text text="{clubs>matches_played}" />
 				</mdct:Column>
 				<mdct:Column
-					propertyKey="range"
-					header="Range">
-					<Text text="{mountains>range}" />
+					propertyKey="matches_won"
+					header="Matches Won">
+					<Text text="{clubs>matches_won}" />
 				</mdct:Column>
 				<mdct:Column
-					propertyKey="first_ascent"
-					header="First Ascent">
-					<Text text="{mountains>first_ascent}" />
+					propertyKey="matches_lost"
+					header="Matches Lost">
+					<Text text="{clubs>matches_lost}" />
 				</mdct:Column>
 				<mdct:Column
-					propertyKey="countries"
-					header="Countries">
-					<Text text="{mountains>countries}" />
+					propertyKey="matches_drawn"
+					header="Matches Drawn">
+					<Text text="{clubs>matches_drawn}" />
 				</mdct:Column>
 				<mdct:Column
-					propertyKey="parent_mountain"
-					header="Parent Mountain">
-					<Text text="{mountains>parent_mountain}" />
+					propertyKey="points"
+					header="Points">
+					<Text text="{clubs>points}" />
 				</mdct:Column>
 			</mdc:Table>
 		</f:content>

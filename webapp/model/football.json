@@ -1,0 +1,283 @@
+{
+    "clubs": [
+        {
+            "rank": 1,
+            "team_name": "Liverpool FC",
+            "matches_played": 38,
+            "matches_won": 30,
+            "matches_lost": 3,
+            "matches_drawn": 5,
+            "points": 95
+        },
+        {
+            "rank": 2,
+            "team_name": "Manchester City FC",
+            "matches_played": 38,
+            "matches_won": 28,
+            "matches_lost": 6,
+            "matches_drawn": 4,
+            "points": 88
+        },
+        {
+            "rank": 3,
+            "team_name": "Chelsea FC",
+            "matches_played": 38,
+            "matches_won": 24,
+            "matches_lost": 6,
+            "matches_drawn": 8,
+            "points": 80
+        },
+        {
+            "rank": 4,
+            "team_name": "Arsenal FC",
+            "matches_played": 38,
+            "matches_won": 23,
+            "matches_lost": 7,
+            "matches_drawn": 8,
+            "points": 77
+        },
+        {
+            "rank": 5,
+            "team_name": "Manchester United FC",
+            "matches_played": 38,
+            "matches_won": 21,
+            "matches_lost": 6,
+            "matches_drawn": 11,
+            "points": 74
+        },
+        {
+            "rank": 6,
+            "team_name": "Tottenham Hotspur FC",
+            "matches_played": 38,
+            "matches_won": 20,
+            "matches_lost": 8,
+            "matches_drawn": 10,
+            "points": 70
+        },
+        {
+            "rank": 7,
+            "team_name": "Leicester City FC",
+            "matches_played": 38,
+            "matches_won": 18,
+            "matches_lost": 12,
+            "matches_drawn": 8,
+            "points": 62
+        },
+        {
+            "rank": 8,
+            "team_name": "West Ham United FC",
+            "matches_played": 38,
+            "matches_won": 16,
+            "matches_lost": 12,
+            "matches_drawn": 10,
+            "points": 58
+        },
+        {
+            "rank": 9,
+            "team_name": "Everton FC",
+            "matches_played": 38,
+            "matches_won": 17,
+            "matches_lost": 13,
+            "matches_drawn": 8,
+            "points": 59
+        },
+        {
+            "rank": 10,
+            "team_name": "Leeds United FC",
+            "matches_played": 38,
+            "matches_won": 16,
+            "matches_lost": 14,
+            "matches_drawn": 8,
+            "points": 56
+        },
+        {
+            "rank": 11,
+            "team_name": "Aston Villa FC",
+            "matches_played": 38,
+            "matches_won": 15,
+            "matches_lost": 13,
+            "matches_drawn": 10,
+            "points": 55
+        },
+        {
+            "rank": 12,
+            "team_name": "Wolverhampton Wanderers FC",
+            "matches_played": 38,
+            "matches_won": 14,
+            "matches_lost": 14,
+            "matches_drawn": 10,
+            "points": 52
+        },
+        {
+            "rank": 13,
+            "team_name": "Crystal Palace FC",
+            "matches_played": 38,
+            "matches_won": 13,
+            "matches_lost": 15,
+            "matches_drawn": 10,
+            "points": 49
+        },
+        {
+            "rank": 14,
+            "team_name": "Southampton FC",
+            "matches_played": 38,
+            "matches_won": 11,
+            "matches_lost": 17,
+            "matches_drawn": 10,
+            "points": 43
+        },
+        {
+            "rank": 15,
+            "team_name": "Newcastle United FC",
+            "matches_played": 38,
+            "matches_won": 11,
+            "matches_lost": 17,
+            "matches_drawn": 10,
+            "points": 43
+        },
+        {
+            "rank": 16,
+            "team_name": "Brighton & Hove Albion FC",
+            "matches_played": 38,
+            "matches_won": 9,
+            "matches_lost": 17,
+            "matches_drawn": 12,
+            "points": 39
+        },
+        {
+            "rank": 17,
+            "team_name": "Burnley FC",
+            "matches_played": 38,
+            "matches_won": 9,
+            "matches_lost": 19,
+            "matches_drawn": 10,
+            "points": 37
+        },
+        {
+            "rank": 18,
+            "team_name": "Fulham FC",
+            "matches_played": 38,
+            "matches_won": 7,
+            "matches_lost": 20,
+            "matches_drawn": 11,
+            "points": 32
+        },
+        {
+            "rank": 19,
+            "team_name": "West Bromwich Albion FC",
+            "matches_played": 38,
+            "matches_won": 5,
+            "matches_lost": 22,
+            "matches_drawn": 11,
+            "points": 26
+        },
+        {
+            "rank": 20,
+            "team_name": "Sheffield United FC",
+            "matches_played": 38,
+            "matches_won": 5,
+            "matches_lost": 29,
+            "matches_drawn": 4,
+            "points": 19
+        },
+        {
+            "rank": 21,
+            "team_name": "Norwich City FC",
+            "matches_played": 38,
+            "matches_won": 3,
+            "matches_lost": 30,
+            "matches_drawn": 5,
+            "points": 14
+        },
+        {
+            "rank": 22,
+            "team_name": "Nottingham Forest FC",
+            "matches_played": 38,
+            "matches_won": 8,
+            "matches_lost": 23,
+            "matches_drawn": 7,
+            "points": 31
+        },
+        {
+            "rank": 23,
+            "team_name": "Reading FC",
+            "matches_played": 38,
+            "matches_won": 7,
+            "matches_lost": 23,
+            "matches_drawn": 8,
+            "points": 29
+        },
+        {
+            "rank": 24,
+            "team_name": "Ipswich Town FC",
+            "matches_played": 38,
+            "matches_won": 6,
+            "matches_lost": 24,
+            "matches_drawn": 8,
+            "points": 26
+        },
+        {
+            "rank": 25,
+            "team_name": "Bradford City FC",
+            "matches_played": 38,
+            "matches_won": 5,
+            "matches_lost": 25,
+            "matches_drawn": 8,
+            "points": 23
+        },
+        {
+            "rank": 26,
+            "team_name": "Cardiff City FC",
+            "matches_played": 38,
+            "matches_won": 5,
+            "matches_lost": 27,
+            "matches_drawn": 6,
+            "points": 21
+        },
+        {
+            "rank": 27,
+            "team_name": "Queens Park Rangers FC",
+            "matches_played": 38,
+            "matches_won": 4,
+            "matches_lost": 28,
+            "matches_drawn": 6,
+            "points": 18
+        },
+        {
+            "rank": 28,
+            "team_name": "Preston North End FC",
+            "matches_played": 38,
+            "matches_won": 3,
+            "matches_lost": 28,
+            "matches_drawn": 7,
+            "points": 16
+        },
+        {
+            "rank": 29,
+            "team_name": "Bristol City FC",
+            "matches_played": 38,
+            "matches_won": 2,
+            "matches_lost": 29,
+            "matches_drawn": 7,
+            "points": 13
+        },
+        {
+            "rank": 30,
+            "team_name": "Swindon Town FC",
+            "matches_played": 38,
+            "matches_won": 1,
+            "matches_lost": 30,
+            "matches_drawn": 7,
+            "points": 10
+        },
+        {
+            "rank": 31,
+            "team_name": "Derby County FC",
+            "matches_played": 38,
+            "matches_won": 1,
+            "matches_lost": 33,
+            "matches_drawn": 4,
+            "points": 7
+        }
+]
+}

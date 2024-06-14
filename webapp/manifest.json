@@ -9,6 +9,12 @@
 		"description": "{{appDescription}}",
 		"applicationVersion": {
 			"version": "${version}"
+		},
+		"dataSources": {
+			"football" : {
+				"uri": "model/football.json",
+				"type": "JSON"
+			}
 		}
 	},
 
@@ -34,7 +40,11 @@
 			"minUI5Version": "1.125.0",
 			"libs": {
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.f":{},
+				"sap.ui.mdc": {},
+				"sap.ui.fl": {},
+				"sap.ui.table": {}
 			}
 		},
 
@@ -51,12 +61,18 @@
 				"settings": {
 					"bundleName": "com.myorg.myapp.i18n.i18n"
 				}
+			},
+			"clubs": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "football"
 			}
 		},
 
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"path": "ui5.com.myorg.myapp.view",
 				"viewType": "XML",
 				"viewPath": "com.myorg.myapp.view",
 				"controlId": "app",
@@ -68,14 +84,29 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
+				},
+				{
+					"pattern": "detail/{footballPath}",
+					"name": "detail",
+					"target": "detail"
 				}
 			],
 			"targets": {
 				"main": {
 					"viewId": "main",
 					"viewName": "Main"
+				},
+				"detail": {
+					"viewId": "detail",
+					"viewName": "Detail"
 				}
-			}
+			},
+			"rootView": {
+			"viewName": "com.myorg.myapp.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "sample"
+		}
 		}
 	}
 }
