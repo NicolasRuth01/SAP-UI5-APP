@@ -44,7 +44,18 @@
 				"sap.f":{},
 				"sap.ui.mdc": {},
 				"sap.ui.fl": {},
-				"sap.ui.table": {}
+				"sap.chart":{}
+			}
+		},
+		"config": {
+			"sample": {
+				"stretch": true,
+				"files": [
+					"Detail.view.xml",
+					"Detail.controller.js",
+					"Display.fragment.xml",
+					"manifest.json"
+				]
 			}
 		},
 
@@ -62,7 +73,7 @@
 					"bundleName": "com.myorg.myapp.i18n.i18n"
 				}
 			},
-			"clubs": {
+			"": {
 				"type": "sap.ui.model.json.JSONModel",
 				"dataSource": "football"
 			}

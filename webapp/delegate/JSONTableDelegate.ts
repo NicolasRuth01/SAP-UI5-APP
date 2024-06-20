@@ -47,7 +47,7 @@ const _createColumn = (propertyInfo:TablePropertyInfo, table:Table) => {
 		header: propertyInfo.label,
 		template: new Text({
 			text: {
-				path: "clubs>" + name,
+				path: name,
 				type: propertyInfo.dataType
 			}
 		})

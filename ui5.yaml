@@ -3,7 +3,7 @@ metadata:
   name: com.myorg.myapp
 type: application
 framework:
-  name: OpenUI5
+  name: SAPUI5
   version: "1.125.0"
   libraries:
     - name: sap.m
@@ -12,7 +12,7 @@ framework:
     - name: sap.ui.mdc
     - name: sap.ui.fl
     - name: sap.f
-    - name: sap.ui.table
+    - name: sap.chart
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task

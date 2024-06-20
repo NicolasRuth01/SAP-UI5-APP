@@ -1,13 +1,24 @@
 <mvc:View
-	controllerName="com.myprg.myapp.controller.Detail"
+	controllerName="com.myorg.myapp.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page
 		title="{i18n>detailPageTitle}"
 		showNavButton="true"
-		navButtonPress=".onNavBack">
+		navButtonPress=".onNavBack">			
+		
 		<ObjectHeader
-			intro="{clubs>team_name}"
-			title="{clubs>team_name}"/>
+			responsive="true"
+			fullScreenOptimized="true"
+			title="{team_name}">
+			<attributes>
+				<ObjectAttribute
+					title="Founded"
+					text="{founded}"/>
+				<ObjectAttribute
+					title="Stadium"
+					text="{stadium}"/>
+			</attributes>
+		</ObjectHeader>
 	</Page>
 </mvc:View>

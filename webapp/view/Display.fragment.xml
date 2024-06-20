@@ -1,0 +1,111 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:mdcLink="sap.ui.mdc.link"
+	xmlns:mdcField="sap.ui.mdc.field"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:mdcChart="sap.ui.mdc.chart">
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormDisplay480_12120"
+			editable="false">
+			<f:title>
+				<core:Title text="Info" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="4"
+					labelSpanL="4"
+					labelSpanM="12"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="0"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="2"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Team Name">
+							<f:fields>
+								<Text text="{team_name}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Points">
+							<f:fields>
+								<Text text="{points}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Rank">
+							<f:fields>
+								<Text text="{rank}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Members">
+							<f:fields>
+								<Text text="{members}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<f:FormContainer title="Chart">
+					<f:FormElement>
+						<mdc:Chart chartType="donut" delegate="{ 
+								'name': 'com/myorg/myapp/delegate/ChartDelegate',
+								'payload': {
+									collectionName: 'clubs'								
+								}
+							}">
+
+							<mdcChart:Item type="aggregatable" propertyKey="matches_won" label="Matches Won"/>
+							<mdcChart:Item type="aggregatable" propertyKey="matches_drawn" label="Matches Drawn"/>
+							<mdcChart:Item type="aggregatable" propertyKey="matches_lost" label="Matches Lost"/>
+						</mdc:Chart>
+					</f:FormElement>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<f:Form id="FormDisplay480_12120-2"
+			editable="false">
+			<f:title>
+				<core:Title text="Links"/>
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="4"
+					labelSpanL="4"
+					labelSpanM="12"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="0"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="2"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:FormElement>
+						<mdc:Field value="Social Media" editMode="Display">
+							<mdc:fieldInfo>
+								<mdc:Link delegate="{ 
+									'name': 'com/myorg/myapp/delegate/JSONLinkDelegate',
+									payload: { 'Links': '{team_name}', 'displayAs': 'Popover', 'alwaysNavigate': true }}">
+								</mdc:Link>
+							</mdc:fieldInfo>
+						</mdc:Field>
+					</f:FormElement>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:FragmentDefinition>

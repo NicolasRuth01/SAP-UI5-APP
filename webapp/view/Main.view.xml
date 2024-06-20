@@ -15,6 +15,7 @@
 			<f:DynamicPageTitle>
 				<f:heading>
 					<Title text="Football Clubs"/>
+					<vm:VariantManagement id="variants" for="filterbar, table"/>
 				</f:heading>
 			</f:DynamicPageTitle>
 		</f:title>
@@ -49,15 +50,14 @@
 				id="table"
 				header="Football Clubs"
 				p13nMode="Sort,Column"
-				type="Table"
+				type="ResponsiveTable"
 				threshold="100"
 				filter="filterbar"
 				showRowCount="false"
 				delegate="{
 				name: 'com/myorg/myapp/delegate/JSONTableDelegate',
 				payload: {
-					bindingPath: 'clubs>/clubs',
-					searchKeys: ['team_name', 'matches_played', 'matches_won', 'points']
+					bindingPath: '/clubs'
 				}
 			}">
 				<mdc:rowSettings>
@@ -68,34 +68,40 @@
 					</mdc:table.RowSettings>
 				</mdc:rowSettings>
 				<mdct:Column
+					width="4em"
+					propertyKey="rank"
+					header="Rank">
+					<Text text="{rank}" />
+				</mdct:Column>
+				<mdct:Column
 					propertyKey="team_name"
 					header="Team Name">
-					<Text text="{clubs>team_name}" />
+					<Text text="{team_name}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="matches_played"
 					header="Matches Played">
-					<Text text="{clubs>matches_played}" />
+					<Text text="{matches_played}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="matches_won"
 					header="Matches Won">
-					<Text text="{clubs>matches_won}" />
+					<Text text="{matches_won}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="matches_lost"
 					header="Matches Lost">
-					<Text text="{clubs>matches_lost}" />
+					<Text text="{matches_lost}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="matches_drawn"
 					header="Matches Drawn">
-					<Text text="{clubs>matches_drawn}" />
+					<Text text="{matches_drawn}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="points"
 					header="Points">
-					<Text text="{clubs>points}" />
+					<Text text="{points}" />
 				</mdct:Column>
 			</mdc:Table>
 		</f:content>
