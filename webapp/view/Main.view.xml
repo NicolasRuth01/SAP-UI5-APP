@@ -49,7 +49,7 @@
 			<mdc:Table
 				id="table"
 				header="Football Clubs"
-				p13nMode="Sort,Column"
+				p13nMode="Sort,Column,Group"
 				type="ResponsiveTable"
 				threshold="100"
 				filter="filterbar"

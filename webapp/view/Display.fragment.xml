@@ -30,7 +30,7 @@
 					singleContainerFullSize="false" />
 			</f:layout>
 			<f:formContainers>
-				<f:FormContainer>
+				<f:FormContainer>				
 					<f:formElements>
 						<f:FormElement label="Team Name">
 							<f:fields>
@@ -54,18 +54,18 @@
 						</f:FormElement>
 					</f:formElements>
 				</f:FormContainer>
-				<f:FormContainer title="Chart">
+				<f:FormContainer>
 					<f:FormElement>
-						<mdc:Chart chartType="donut" delegate="{ 
+						<mdc:Chart p13nMode="Type,Item" chartType="pie" id="chart_id" delegate="{ 
 								'name': 'com/myorg/myapp/delegate/ChartDelegate',
 								'payload': {
 									collectionName: 'clubs'								
 								}
 							}">
-
-							<mdcChart:Item type="aggregatable" propertyKey="matches_won" label="Matches Won"/>
-							<mdcChart:Item type="aggregatable" propertyKey="matches_drawn" label="Matches Drawn"/>
-							<mdcChart:Item type="aggregatable" propertyKey="matches_lost" label="Matches Lost"/>
+							<mdcChart:Item type="groupable" propertyKey="team_name" label="team_name"/>
+							<mdcChart:Item type="aggregatable" propertyKey="matches_won" label="matches_won"/>
+							<mdcChart:Item type="aggregatable" propertyKey="matches_drawn" label="matches_drawn"/>
+							<mdcChart:Item type="aggregatable" propertyKey="matches_lost" label="matches_lost"/>
 						</mdc:Chart>
 					</f:FormElement>
 				</f:FormContainer>
@@ -98,8 +98,7 @@
 						<mdc:Field value="Social Media" editMode="Display">
 							<mdc:fieldInfo>
 								<mdc:Link delegate="{ 
-									'name': 'com/myorg/myapp/delegate/JSONLinkDelegate',
-									payload: { 'Links': '{team_name}', 'displayAs': 'Popover', 'alwaysNavigate': true }}">
+									'name': 'com/myorg/myapp/delegate/JSONLinkDelegate'}">
 								</mdc:Link>
 							</mdc:fieldInfo>
 						</mdc:Field>

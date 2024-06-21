@@ -15,6 +15,7 @@ export default class Detail extends Controller {
             name: "com.myorg.myapp.view.Display"
         }).then((formFragment) => {
             this.getView().getContent()[0].addContent(formFragment);
+                       
         })
     }
 
@@ -22,6 +23,12 @@ export default class Detail extends Controller {
         this.getView().bindElement({
             path: "/" + window.decodeURIComponent( (<any> event.getParameter("arguments")).footballPath),
         });
+        const oChart = this.byId("chart_id")
+        oChart?.initialized().then(()=>{
+            oChart._rebind().then(()=>{ //Workaround
+                oChart.setBusy(false) //Workaround
+            })
+        }) 
     }
 
     onNavBack(): void {
