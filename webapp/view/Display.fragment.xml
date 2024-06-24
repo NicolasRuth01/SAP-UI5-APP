@@ -56,7 +56,10 @@
 				</f:FormContainer>
 				<f:FormContainer>
 					<f:FormElement>
-						<mdc:Chart p13nMode="Type,Item" chartType="pie" id="chart_id" delegate="{ 
+						<mdc:Chart
+							height="400px"
+							p13nMode="Type,Item" 
+							chartType="pie" id="chart_id" delegate="{ 
 								'name': 'com/myorg/myapp/delegate/ChartDelegate',
 								'payload': {
 									collectionName: 'clubs'								

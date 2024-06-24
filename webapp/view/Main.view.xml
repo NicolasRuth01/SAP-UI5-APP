@@ -7,7 +7,10 @@
 	xmlns:core="sap.ui.core"
 	xmlns:mdc="sap.ui.mdc"
 	xmlns:mdct="sap.ui.mdc.table"
+	xmlns:mdcValueHelp="sap.ui.mdc.valuehelp"
+	xmlns:mdcValueHelpContent="sap.ui.mdc.valuehelp.content"
 	xmlns:vm="sap.ui.fl.variants"
+	xmlns:form="sap.ui.layout.form"
 	controllerName="com.myorg.myapp.controller.Main">
 
 	<f:DynamicPage id="page">
@@ -21,90 +24,153 @@
 		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				<mdc:FilterBar id="filterbar" delegate="{
-					name: 'com/myorg/myapp/delegate/JSONFilterBarDelegate'}"
+				<mdc:FilterBar 
+					id="filterbar"
+					delegate="{
+						name: 'com/myorg/myapp/delegate/JSONFilterBarDelegate'}"
                     p13nMode = "Item,Value">
 					<mdc:basicSearchField>
 						<mdc:FilterField delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"
+							label="Search"
 							dataType="sap.ui.model.type.String"
-							placeholder= "Search Clubs"
+							placeholder= "Search"
 							conditions="{$filters>/conditions/$search}"
 							maxConditions="1"/>
-					</mdc:basicSearchField>
+					</mdc:basicSearchField>				
+
+					
 					<mdc:filterItems>
 						<mdc:FilterField
 							label="Team Name"
 							propertyKey="team_name"
 							dataType="sap.ui.model.type.String"
-							conditions="{$filters>/conditions/name}"
-							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
+							conditions="{$filters>/conditions/team_name}"
+							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"							
+							operators="EQ"
+							display="Description"
+							valueHelp="VH-TypeAhead">
+							<mdc:dependents>
+								<mdc:ValueHelp id="VH-TypeAhead" delegate="{name: 'com/myorg/myapp/delegate/ValueHelpDelegate', payload: {}}">
+									<mdc:typeahead>
+										<mdcValueHelp:Popover title="Select Team">
+											<mdcValueHelpContent:MTable keyPath="team_name" descriptionPath="team_name" filterFields="*team_name*">
+												<Table id="ddListMountains" items='{path : "/clubs" }' width="23rem">
+													<columns>
+														<Column width="10rem">
+															<header>
+																<Text text="Team Name" />
+															</header>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem type="Active">
+															<cells>
+																<Text text="{team_name}"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</mdcValueHelpContent:MTable>
+										</mdcValueHelp:Popover>
+									</mdc:typeahead>
+								</mdc:ValueHelp>
+							</mdc:dependents>
+						</mdc:FilterField>
 					</mdc:filterItems>
-					<mdc:dependents>
+					
 						
-					</mdc:dependents>
+							<!-- <mdc:ValueHelp id="VH-TypeAhead"
+								delegate='{"name": "com/myorg/myapp/delegate/ValueHelpDelegate", "payload": {"searchKeys": "team_name"]}}'>
+								<mdc:typeahead>
+									<mdcValueHelp:Popover id="VH-TypeAhead-Pop">
+										<mdcValueHelpContent:MTable id="VH-TypeAhead-Pop-MTable"
+											keyPath="key"
+											descriptionPath="name"
+											caseSensitive="true"
+											useAsValueHelp="true">
+											<Table id="VH-TypeAhead-Pop-Table" items="{path: '/clubs'}" width="13rem" mode="SingleSelectMaster">
+												<columns>
+													<Column width="10rem">
+														<Label text="Team Name"/>
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem type="Active">
+														<Text text="{team_name}"/>
+													</ColumnListItem>
+												</items>
+											</Table>
+										</mdcValueHelpContent:MTable>
+										<mdcValueHelpContent:FixedList id="VH-TypeAheadDropdown-Pop-FixedList" items="{path: '/clubs'}" >
+											<mdcValueHelpContent:FixedListItem text="{team_name}"/>
+										</mdcValueHelpContent:FixedList>
+									</mdcValueHelp:Popover>
+								</mdc:typeahead>
+							</mdc:ValueHelp> -->
+					
 				</mdc:FilterBar>
 			</f:DynamicPageHeader>
 		</f:header>
-				<f:content>
-			<mdc:Table
-				id="table"
-				header="Football Clubs"
-				p13nMode="Sort,Column,Group"
-				type="ResponsiveTable"
-				threshold="100"
-				filter="filterbar"
-				showRowCount="false"
-				delegate="{
-				name: 'com/myorg/myapp/delegate/JSONTableDelegate',
-				payload: {
-					bindingPath: '/clubs'
-				}
-			}">
-				<mdc:rowSettings>
-					<mdc:table.RowSettings>
-						<mdc:rowActions>
-							<mdc:table.RowActionItem type="Navigation" press="onRowPress"/>
-						</mdc:rowActions>
-					</mdc:table.RowSettings>
-				</mdc:rowSettings>
-				<mdct:Column
-					width="4em"
-					propertyKey="rank"
-					header="Rank">
-					<Text text="{rank}" />
-				</mdct:Column>
-				<mdct:Column
-					propertyKey="team_name"
-					header="Team Name">
-					<Text text="{team_name}" />
-				</mdct:Column>
-				<mdct:Column
-					propertyKey="matches_played"
-					header="Matches Played">
-					<Text text="{matches_played}" />
-				</mdct:Column>
-				<mdct:Column
-					propertyKey="matches_won"
-					header="Matches Won">
-					<Text text="{matches_won}" />
-				</mdct:Column>
-				<mdct:Column
-					propertyKey="matches_lost"
-					header="Matches Lost">
-					<Text text="{matches_lost}" />
-				</mdct:Column>
-				<mdct:Column
-					propertyKey="matches_drawn"
-					header="Matches Drawn">
-					<Text text="{matches_drawn}" />
-				</mdct:Column>
-				<mdct:Column
-					propertyKey="points"
-					header="Points">
-					<Text text="{points}" />
-				</mdct:Column>
-			</mdc:Table>
-		</f:content>
-	</f:DynamicPage>
+			<f:content>
+				<mdc:Table
+					id="table"
+					header="Football Clubs"
+					p13nMode="Sort,Column"
+					type="ResponsiveTable"
+					threshold="100"
+					filter="filterbar"
+					showRowCount="false"
+					delegate="{
+					name: 'com/myorg/myapp/delegate/JSONTableDelegate',
+					payload: {
+						bindingPath: '/clubs'
+					}
+				}">
+					<mdc:rowSettings>
+						<mdc:table.RowSettings>
+							<mdc:rowActions>
+								<mdc:table.RowActionItem type="Navigation" press="onRowPress"/>
+							</mdc:rowActions>
+						</mdc:table.RowSettings>
+					</mdc:rowSettings>
+					<mdct:Column
+						width="4em"
+						propertyKey="rank"
+						header="Rank">
+						<Text text="{rank}" />
+					</mdct:Column>
+					<mdct:Column
+						propertyKey="team_name"
+						header="Team Name">
+						<Text text="{team_name}" />
+					</mdct:Column>
+					<mdct:Column
+						propertyKey="matches_played"
+						header="Matches Played">
+						<Text text="{matches_played}" />
+					</mdct:Column>
+					<mdct:Column
+						propertyKey="matches_won"
+						header="Matches Won">
+						<Text text="{matches_won}" />
+					</mdct:Column>
+					<mdct:Column
+						propertyKey="matches_lost"
+						header="Matches Lost">
+						<Text text="{matches_lost}" />
+					</mdct:Column>
+					<mdct:Column
+						propertyKey="matches_drawn"
+						header="Matches Drawn">
+						<Text text="{matches_drawn}" />
+					</mdct:Column>
+					<mdct:Column
+						propertyKey="points"
+						header="Points">
+						<Text text="{points}" />
+					</mdct:Column>
+				</mdc:Table>
+			</f:content>
+		</f:DynamicPage>
 
 </mvc:View>
