@@ -2,6 +2,7 @@ import Controller from "sap/ui/core/mvc/Controller";
 import Component from "../Component";
 import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import History from "sap/ui/core/routing/History";
+import View from "sap/ui/core/mvc/View";
 
 /**
  * @namespace com.myorg.myapp.controller
@@ -14,14 +15,15 @@ export default class Detail extends Controller {
         this.loadFragment({
             name: "com.myorg.myapp.view.Display"
         }).then((formFragment) => {
-            this.getView().getContent()[0].addContent(formFragment);
-                       
-        })
+            const view = this.getView();
+            const content = view.getContent()[0] as View;
+            content.addContent(formFragment);                      
+        }).catch(()=>console.log('AAA'))
     }
 
     onObjectMatched(event: Route$PatternMatchedEvent): void {
         this.getView().bindElement({
-            path: "/" + window.decodeURIComponent( (<any> event.getParameter("arguments")).footballPath),
+            path: "/" + window.decodeURIComponent((event.getParameter("arguments")).footballPath),
         });
         const oChart = this.byId("chart_id")
         oChart?.initialized().then(()=>{

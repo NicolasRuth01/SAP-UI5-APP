@@ -1,10 +1,9 @@
 import LinkDelegate from "sap/ui/mdc/LinkDelegate"; 
 import LinkItem from "sap/ui/mdc/link/LinkItem";
-import Link from "sap/ui/mdc/Link"
 
 const SampleLinkDelegate: LinkDelegate = Object.assign({}, LinkDelegate);
 
-SampleLinkDelegate.fetchLinkItems = function(oLink: any): Promise<LinkItem[]> {
+SampleLinkDelegate.fetchLinkItems = function(): Promise<LinkItem[]> {
     const oFirstLink: LinkItem = new LinkItem({
         key: "link01",
         text: `Homepage`,

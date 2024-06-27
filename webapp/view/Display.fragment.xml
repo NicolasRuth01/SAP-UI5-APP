@@ -7,11 +7,13 @@
 	xmlns:mdcField="sap.ui.mdc.field"
 	xmlns:mdc="sap.ui.mdc"
 	xmlns:mdcChart="sap.ui.mdc.chart">
+
 	<VBox class="sapUiSmallMargin">
-		<f:Form id="FormDisplay480_12120"
+		<f:Form
+			id="FormDisplay480_12120"
 			editable="false">
 			<f:title>
-				<core:Title text="Info" />
+				<core:Title text="Info"/>
 			</f:title>
 			<f:layout>
 				<f:ResponsiveGridLayout
@@ -27,7 +29,7 @@
 					columnsXL="2"
 					columnsL="2"
 					columnsM="1"
-					singleContainerFullSize="false" />
+					singleContainerFullSize="false"/>
 			</f:layout>
 			<f:formContainers>
 				<f:FormContainer>				
@@ -44,7 +46,7 @@
 						</f:FormElement>
 						<f:FormElement label="Rank">
 							<f:fields>
-								<Text text="{rank}" />
+								<Text text="{rank}"/>
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Members">
@@ -59,10 +61,12 @@
 						<mdc:Chart
 							height="400px"
 							p13nMode="Type,Item" 
-							chartType="pie" id="chart_id" delegate="{ 
-								'name': 'com/myorg/myapp/delegate/ChartDelegate',
-								'payload': {
-									collectionName: 'clubs'								
+							chartType="pie"
+							id="chart_id"
+							delegate="{ 
+								'name':'com/myorg/myapp/delegate/ChartDelegate',
+								'payload':{
+									collectionName:'clubs'								
 								}
 							}">
 							<mdcChart:Item type="groupable" propertyKey="team_name" label="team_name"/>
@@ -74,7 +78,8 @@
 				</f:FormContainer>
 			</f:formContainers>
 		</f:Form>
-		<f:Form id="FormDisplay480_12120-2"
+		<f:Form
+			id="FormDisplay480_12120-2"
 			editable="false">
 			<f:title>
 				<core:Title text="Links"/>
@@ -98,10 +103,13 @@
 			<f:formContainers>
 				<f:FormContainer>
 					<f:FormElement>
-						<mdc:Field value="Social Media" editMode="Display">
+						<mdc:Field
+							value="Social Media"
+							editMode="Display">
 							<mdc:fieldInfo>
-								<mdc:Link delegate="{ 
-									'name': 'com/myorg/myapp/delegate/JSONLinkDelegate'}">
+								<mdc:Link 
+									delegate="{ 
+										'name':'com/myorg/myapp/delegate/JSONLinkDelegate'}">
 								</mdc:Link>
 							</mdc:fieldInfo>
 						</mdc:Field>

@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:mdct="sap.ui.mdc.table">
+    <mdc:Table
+        id="table"
+        header="Football Clubs"
+        p13nMode="Sort,Column,Group"
+        type="ResponsiveTable"
+        threshold="100"
+        filter="filterbar"
+        showRowCount="false"
+        delegate="{
+        name:'com/myorg/myapp/delegate/JSONTableDelegate',
+        payload:{
+            bindingPath:'/clubs',
+            searchKeys:['team_name','coach','stadium']
+        }
+        }">
+        <mdc:rowSettings>
+            <mdc:table.RowSettings>
+                <mdc:rowActions>
+                    <mdc:table.RowActionItem
+                        type="Navigation"
+                        press="onRowPress"/>
+                </mdc:rowActions>
+            </mdc:table.RowSettings>
+        </mdc:rowSettings>
+        <mdct:Column
+            width="4em"
+            propertyKey="rank"
+            header="Rank">
+            <Text text="{rank}"/>
+        </mdct:Column>
+        <mdct:Column
+            propertyKey="team_name"
+            header="Team Name">
+            <Text text="{team_name}"/>
+        </mdct:Column>
+        <mdct:Column
+            propertyKey="matches_played"
+            header="Matches Played">
+            <Text text="{matches_played}"/>
+        </mdct:Column>
+        <mdct:Column
+            propertyKey="matches_won"
+            header="Matches Won">
+            <Text text="{matches_won}"/>
+        </mdct:Column>
+        <mdct:Column
+            propertyKey="matches_lost"
+            header="Matches Lost">
+            <Text text="{matches_lost}"/>
+        </mdct:Column>
+        <mdct:Column
+            propertyKey="matches_drawn"
+            header="Matches Drawn">
+            <Text text="{matches_drawn}"/>
+        </mdct:Column>
+        <mdct:Column
+            propertyKey="points"
+            header="Points">
+            <Text text="{points}"/>
+        </mdct:Column>
+    </mdc:Table>
+</core:FragmentDefinition>

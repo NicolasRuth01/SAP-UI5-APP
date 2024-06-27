@@ -54,6 +54,7 @@
 					"Detail.view.xml",
 					"Detail.controller.js",
 					"Display.fragment.xml",
+					"Table.fragment.xml",
 					"manifest.json"
 				]
 			}
