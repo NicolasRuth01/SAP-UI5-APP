@@ -17,7 +17,7 @@ JSONChartDelegate.fetchProperties = async () => {
     }, 50)
   }
 
-  JSONChartDelegate.removeItemFromInnerChart = async (oChart, oChartItem, iIndex) => {
+  JSONChartDelegate.removeItemFromInnerChart = async (oChart: Chart, oChartItem, iIndex) => {
     await ChartDelegate.removeItemFromInnerChart(oChart, oChartItem, iIndex);
     setTimeout(() => {
       oChart._innerChartDataLoadComplete();

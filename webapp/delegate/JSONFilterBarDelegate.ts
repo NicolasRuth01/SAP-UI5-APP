@@ -3,6 +3,7 @@ import JSONPropertyInfo from "com/myorg/myapp/model/metadata/JSONPropertyInfo"
 import FilterField from "sap/ui/mdc/FilterField"
 import Element from "sap/ui/core/Element"
 import {default as FilterBar, PropertyInfo as FilterBarPropertyInfo} from "sap/ui/mdc/FilterBar"
+import Slider from "sap/m/Slider"
 
 const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate)
 
@@ -30,7 +31,9 @@ const _createFilterField = (id:string, property:FilterBarPropertyInfo) => {
 			propertyKey:"matches_won",
 			dataType:"sap.ui.model.type.Integer",
 			maxConditions:1,
+			operators:["GE"],
 			delegate:{name: "sap/ui/mdc/field/FieldBaseDelegate", "payload": {}},
+			content: new Slider("F1-S",{showAdvancedTooltip:true, value:"{path: '$field>/conditions', type: 'sap.ui.mdc.field.ConditionsType'}", min:0, max:38}),
 	})
 	return filterField
 	}else{
