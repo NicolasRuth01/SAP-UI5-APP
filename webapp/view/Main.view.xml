@@ -30,7 +30,8 @@
 					delegate="{name:'com/myorg/myapp/delegate/JSONFilterBarDelegate'}"
                     p13nMode="Item,Value">
 					<mdc:basicSearchField>
-						<mdc:FilterField 
+						<mdc:FilterField
+							id="basicSearchField"
 							delegate="{name:'sap/ui/mdc/field/FieldBaseDelegate'}"
 							label="Search"
 							dataType="sap.ui.model.type.String"

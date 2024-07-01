@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import opaTest from "sap/ui/test/opaQunit";
 import MainPage from "./pages/MainPage";
+import MDCTestLib from "test-resources/sap/ui/mdc/testutils/opa/TestLibrary";
+import Opa5 from "sap/ui/test/Opa5";
+import FilterField from "sap/ui/mdc/FilterField";
 
 const onTheMainPage = new MainPage();
+const onTheFilterField = new FilterField();
 
 QUnit.module("Sample Hello Journey");
 
-opaTest("Should open the Hello dialog", function () {
+opaTest("Should type in Search Field", function () {
 	// Arrangements
 	onTheMainPage.iStartMyUIComponent({
 		componentConfig: {
@@ -15,35 +19,10 @@ opaTest("Should open the Hello dialog", function () {
 	});
 
 	// Actions
-	onTheMainPage.iPressTheSayHelloWithDialogButton();
+	onTheFilterField.iEnterTextOnTheFilterField("basicSearchField", "Klopp");
 
 	// Assertions
-	onTheMainPage.iShouldSeeTheHelloDialog();
-
-	// Actions
-	onTheMainPage.iPressTheOkButtonInTheDialog();
-
-	// Assertions
-	onTheMainPage.iShouldNotSeeTheHelloDialog();
-
-	// Cleanup
-	onTheMainPage.iTeardownMyApp();
-});
-
-opaTest("Should close the Hello dialog", function () {
-	// Arrangements
-	onTheMainPage.iStartMyUIComponent({
-		componentConfig: {
-			name: "com.myorg.myapp"
-		}
-	});
-
-	// Actions
-	onTheMainPage.iPressTheSayHelloWithDialogButton();
-	onTheMainPage.iPressTheOkButtonInTheDialog();
-
-	// Assertions
-	onTheMainPage.iShouldNotSeeTheHelloDialog();
+	onTheFilterField.iShouldSeeTheFilterField("basicSearchField", "Klopp");
 
 	// Cleanup
 	onTheMainPage.iTeardownMyApp();
