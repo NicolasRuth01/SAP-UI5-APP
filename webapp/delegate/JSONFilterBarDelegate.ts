@@ -24,8 +24,7 @@ const _createFilterField = (id:string, property:FilterBarPropertyInfo) => {
 	})
 	return filterField
 	}else if (propertyKey === "matches_won"){
-		const filterField = new FilterField(id, {
-			id:"Slider",
+		const filterField = new FilterField(id,{
 			label:"Minimum Matches Won",
 			conditions:"{$filters>/conditions/matches_won}",
 			propertyKey:"matches_won",

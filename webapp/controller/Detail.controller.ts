@@ -20,7 +20,9 @@ export default class Detail extends Controller {
             const view = this.getView();
             const content = view.getContent()[0] as View;
             content.addContent(formFragment as Control);
-        }).catch(()=>console.log('AAA'))
+        }).catch(err => {
+            console.error('Error during init', err); 
+        })
     }
 
     onObjectMatched(event: Route$PatternMatchedEvent): void {
@@ -29,8 +31,8 @@ export default class Detail extends Controller {
             path: "/" + window.decodeURIComponent(args.footballPath),
         });
         const oChart = this.byId("chart_id") as Chart;
-        (oChart as unknown as { initialized(): Promise<any>; }).initialized().then(()=>{
-            (oChart as unknown as { _rebind(): Promise<any>; })._rebind().then(()=>{ 
+        (oChart as unknown as { initialized(): Promise<void>; }).initialized().then(()=>{
+            (oChart as unknown as { _rebind(): Promise<void>; })._rebind().then(()=>{ 
             oChart.setBusy(false); 
             }).catch(err => {
                 console.error('Error during _rebind', err); 

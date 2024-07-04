@@ -45,8 +45,12 @@
 							delegate="{name:'com/myorg/myapp/delegate/ValueHelpDelegate',payload:{}}">
 							<mdc:typeahead>
 								<mdcValueHelp:Popover title="Select Team">
-									<mdcValueHelpContent:FixedList id="H-TypeAheadDropdown-Pop-FixedList" items="{path: '/clubs'}" >
-										<mdcValueHelpContent:FixedListItem text="{path: 'team_name', type:'sap.ui.model.type.String'}" key="{path: 'team_name', type:'sap.ui.model.type.String', constraints: {maxLength: 2}}"/>
+									<mdcValueHelpContent:FixedList 
+										id="VH-TypeAheadDropdown-Pop-FixedList"
+										items="{path: '/clubs'}" >
+										<mdcValueHelpContent:FixedListItem
+											text="{path: 'team_name', type:'sap.ui.model.type.String'}"
+											key="{path: 'team_name', type:'sap.ui.model.type.String', constraints: {maxLength: 2}}"/>
 									</mdcValueHelpContent:FixedList>
 								</mdcValueHelp:Popover>
 							</mdc:typeahead>
@@ -72,8 +76,13 @@
 							dataType="sap.ui.model.type.Integer"
 							maxConditions="1"
 							operators="GE"
-							delegate='\{"name": "sap/ui/mdc/field/FieldBaseDelegate", "payload": \{\}\}'>
-							<Slider id="F1-S" showAdvancedTooltip="true" value="{path: '$field>/conditions', type: 'sap.ui.mdc.field.ConditionsType'}" min="0" max="38"/>
+							delegate="{name:'sap/ui/mdc/field/FieldBaseDelegate', payload: {}}">
+							<Slider
+								id="F1-S"
+								showAdvancedTooltip="true"
+								value="{path: '$field>/conditions', type: 'sap.ui.mdc.field.ConditionsType'}"
+								min="0"
+								max="38"/>
 						</mdc:FilterField>
 					</mdc:filterItems>					
 				</mdc:FilterBar>

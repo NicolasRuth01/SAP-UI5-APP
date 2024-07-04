@@ -64,8 +64,8 @@
 							chartType="pie"
 							id="chart_id"
 							delegate="{ 
-								'name':'com/myorg/myapp/delegate/ChartDelegate',
-								'payload':{
+								name:'com/myorg/myapp/delegate/ChartDelegate',
+								payload:{
 									collectionName:'clubs'								
 								}
 							}">
@@ -79,7 +79,7 @@
 			</f:formContainers>
 		</f:Form>
 		<f:Form
-			id="FormDisplay480_12120-2"
+			id="FormDisplayLink"
 			editable="false">
 			<f:title>
 				<core:Title text="Links"/>
@@ -107,10 +107,7 @@
 							value="Social Media"
 							editMode="Display">
 							<mdc:fieldInfo>
-								<mdc:Link 
-									delegate="{ 
-										'name':'com/myorg/myapp/delegate/JSONLinkDelegate'}">
-								</mdc:Link>
+								<mdc:Link delegate="{name:'com/myorg/myapp/delegate/JSONLinkDelegate'}"/>
 							</mdc:fieldInfo>
 						</mdc:Field>
 					</f:FormElement>

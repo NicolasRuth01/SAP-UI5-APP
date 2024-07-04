@@ -4,6 +4,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:mdc="sap.ui.mdc"
     xmlns:mdct="sap.ui.mdc.table">
+    
     <mdc:Table
         id="table"
         header="Football Clubs"
@@ -13,11 +14,11 @@
         filter="filterbar"
         showRowCount="false"
         delegate="{
-        name:'com/myorg/myapp/delegate/JSONTableDelegate',
-        payload:{
-            bindingPath:'/clubs',
-            searchKeys:['team_name','coach','stadium']
-        }
+            name:'com/myorg/myapp/delegate/JSONTableDelegate',
+            payload:{
+                bindingPath:'/clubs',
+                searchKeys:['team_name','coach','stadium']
+            }
         }">
         <mdc:rowSettings>
             <mdc:table.RowSettings>
